@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: bookstorekpa
+      POSTGRES_USER: bookstorekpa
+      POSTGRES_DB: bookstore-jpa
+
+volumes:
+  db_data:
